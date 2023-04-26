@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Linq_Lab2.Models.SearchViewModel>
+@{
+    ViewData["Title"] = "SearchStud";
+}
+
+<h1>Students and techers</h1>
+<br />
+<br />
+
+@{
+    var sortedStudTea = Model.OrderBy(t => t.SFirstName);
+}
+<table class="table">
+
+    <thead>
+    <th>@Html.DisplayNameFor(model => model.SFirstName)</th>
+    <th>@Html.DisplayNameFor(model => model.SLastName)</th>
+    <th>@Html.DisplayNameFor(model => model.TFirstName)</th>
+    <th>@Html.DisplayNameFor(model => model.TLastName)</th>
+    <th>@Html.DisplayNameFor(model => model.Course)</th>
+    </thead>
+    <tbody>
+        @foreach (var item in sortedStudTea)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.SFirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.SLastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.TFirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.TLastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Course)</td>
+            </tr>
+
+        }
+    </tbody>
+
+
+</table>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Linq_Lab2.Models.SearchViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Teachers who educates in programming 1</h1>
+<br />
+<br />
+
+
+
+
+<table class="table">
+
+    <thead>
+    <th>@Html.DisplayNameFor(model => model.TFirstName)</th>
+    <th>@Html.DisplayNameFor(model => model.TLastName)</th>
+    <th>@Html.DisplayNameFor(model => model.Course)</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TFirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.TLastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Course)</td>
+            </tr>
+            
+        }
+    </tbody>
+
+
+</table>
